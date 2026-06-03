@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar Biondo | Asesor de Vida y Retiro · Mat. 93806</title>
+    <meta name="description" content="No te vendo un seguro. Te ayudo a construir el plan que te deje dormir tranquilo. Oscar Biondo, Asesor de Vida y Retiro, Mat. 93806.">
+
+    <!-- Open Graph / WhatsApp / redes -->
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="Oscar Biondo | Asesor de Vida y Retiro">
+    <meta property="og:description" content="No te vendo un seguro. Te ayudo a construir el plan que te deje dormir tranquilo.">
+    <meta property="og:image"       content="/img/foto-oscar.jpeg">
+    <meta property="og:locale"      content="es_AR">
+
+    <!-- Favicon SVG inline -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230d1b2a'/><text y='68' x='50' text-anchor='middle' font-size='54' font-family='serif' fill='%23c9a84c'>OB</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ─── Variables ─── */
+        :root {
+            --navy:       #0d1b2a;
+            --navy-light: #162236;
+            --navy-mid:   #1e3554;
+            --gold:       #c9a84c;
+            --gold-light: #e8c97a;
+            --gold-pale:  #f5e9cc;
+            --cream:      #faf6f0;
+            --white:      #ffffff;
+            --text-dark:  #1a1a2e;
+            --text-mid:   #4a5568;
+            --text-light: #718096;
+            --border:     rgba(201,168,76,.18);
+
+            --ff-display: 'Playfair Display', Georgia, serif;
+            --ff-body:    'Inter', system-ui, sans-serif;
+
+            --radius:    12px;
+            --radius-lg: 24px;
+            --shadow:    0 4px 24px rgba(13,27,42,.10);
+            --shadow-lg: 0 12px 48px rgba(13,27,42,.18);
+            --ease:      cubic-bezier(.4,0,.2,1);
+        }
+
+        /* ─── Reset ─── */
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--ff-body);
+            color: var(--text-dark);
+            background: var(--cream);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+        img { max-width:100%; display:block; }
+        a { color: inherit; text-decoration: none; }
+
+        /* ─── Utilities ─── */
+        .container { width:min(1120px, 92%); margin-inline: auto; }
+        .gold      { color: var(--gold); }
+        .sr-only   { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .45s var(--ease), transform .45s var(--ease);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: .07s; }
+        .reveal-delay-2 { transition-delay: .14s; }
+        .reveal-delay-3 { transition-delay: .21s; }
+        .reveal-delay-4 { transition-delay: .28s; }
+
+        /* ─── Nav ─── */
+        nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 100;
+            transition: background .4s var(--ease), box-shadow .4s var(--ease);
+        }
+        nav.scrolled {
+            background: var(--navy);
+            box-shadow: 0 2px 24px rgba(0,0,0,.3);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.1rem 0;
+        }
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+        }
+        .nav-logo strong {
+            font-family: var(--ff-display);
+            font-size: 1.15rem;
+            color: var(--white);
+            letter-spacing: .01em;
+        }
+        .nav-logo span {
+            font-size: .72rem;
+            color: var(--gold);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+        .nav-link {
+            color: rgba(255,255,255,.75);
+            font-size: .875rem;
+            font-weight: 500;
+            transition: color .25s;
+        }
+        .nav-link:hover { color: var(--white); }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            padding: .65rem 1.4rem;
+            border-radius: 50px;
+            font-family: var(--ff-body);
+            font-size: .875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .25s var(--ease);
+            white-space: nowrap;
+            border: none;
+        }
+        .btn-gold {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(201,168,76,.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1.5px solid rgba(255,255,255,.4);
+        }
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .btn-lg {
+            padding: .9rem 2.2rem;
+            font-size: 1rem;
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
+        .btn-whatsapp:hover {
+            background: #20ba58;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(37,211,102,.35);
+        }
+
+        /* ─── Hero ─── */
+        .hero {
+            min-height: 100vh;
+            background: var(--navy);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 80% at 30% 50%, rgba(201,168,76,.07) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 60% at 75% 30%, rgba(30,53,84,.8) 0%, transparent 60%);
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 3rem 5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.75rem;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 1.5px;
+            background: var(--gold);
+        }
+        .hero h1 {
+            font-family: var(--ff-display);
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.18;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+        .hero-sub {
+            font-size: 1.075rem;
+            color: rgba(255,255,255,.65);
+            max-width: 440px;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            line-height: 1.75;
+        }
+        .hero-sub strong {
+            color: rgba(255,255,255,.9);
+            font-weight: 500;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .9rem;
+            margin-bottom: 3.5rem;
+        }
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,.08);
+        }
+        .hero-trust-text {
+            font-size: .82rem;
+            color: rgba(255,255,255,.45);
+            line-height: 1.5;
+        }
+        .hero-trust-logos {
+            display: flex;
+            gap: .6rem;
+            flex-wrap: wrap;
+        }
+        .company-pill {
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            padding: .28rem .7rem;
+            border-radius: 50px;
+            border: 1px solid rgba(201,168,76,.3);
+            color: var(--gold);
+            background: rgba(201,168,76,.06);
+        }
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-photo-wrap {
+            position: relative;
+            width: 370px;
+            flex-shrink: 0;
+        }
+        /* Marco dorado detrás */
+        .hero-photo-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -10px -10px -10px 10px;
+            border: 2px solid rgba(201,168,76,.35);
+            border-radius: calc(var(--radius-lg) + 4px);
+            z-index: 0;
+        }
+        .hero-photo {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 490px;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: var(--radius-lg);
+            display: block;
+            box-shadow: 0 24px 60px rgba(0,0,0,.5);
+        }
+        .hero-photo-name {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            z-index: 2;
+            padding: 3rem 1.4rem 1.25rem;
+            background: linear-gradient(to top, rgba(13,27,42,.92) 0%, transparent 100%);
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            display: block;
+        }
+        .hero-photo-name-title {
+            display: block;
+            font-family: var(--ff-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        .hero-photo-name-sub {
+            display: block;
+            font-size: .72rem;
+            color: var(--gold);
+            letter-spacing: .06em;
+            margin-top: .15rem;
+        }
+
+        /* ─── Section Base ─── */
+        section { padding: 6rem 0; }
+        .section-eyebrow {
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-family: var(--ff-display);
+            font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+        .section-lead {
+            font-size: 1.1rem;
+            color: var(--text-mid);
+            max-width: 520px;
+            line-height: 1.75;
+        }
+        .section-header { margin-bottom: 3.5rem; }
+        .section-header--center {
+            text-align: center;
+        }
+        .section-header--center .section-lead { margin-inline: auto; }
+
+        /* ─── Section 1: La pregunta ─── */
+        .question-section {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .question-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,.06) 0%, transparent 70%);
+        }
+        .question-section .section-lead { color: rgba(255,255,255,.6); }
+        .big-question {
+            font-family: var(--ff-display);
+            font-size: clamp(1.8rem, 4vw, 3.2rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+            margin-inline: auto;
+        }
+        .big-question em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+        .scenario-card {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.75rem;
+            text-align: left;
+            transition: all .3s var(--ease);
+            cursor: default;
+        }
+        .scenario-card:hover {
+            background: rgba(201,168,76,.08);
+            border-color: rgba(201,168,76,.25);
+            transform: translateY(-4px);
+        }
+        .scenario-emoji {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .scenario-persona {
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .6rem;
+        }
+        .scenario-card h3 {
+            font-family: var(--ff-display);
+            font-size: 1.15rem;
+            color: var(--white);
+            margin-bottom: .75rem;
+            line-height: 1.35;
+        }
+        .scenario-card p {
+            font-size: .875rem;
+            color: rgba(255,255,255,.55);
+            line-height: 1.7;
+        }
+        .scenario-card .scenario-outcome {
+            margin-top: 1rem;
+            font-size: .82rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* ─── Section 2: Cómo trabajo ─── */
+        .process-section { background: var(--white); }
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .process-intro .section-lead { margin-bottom: 2rem; }
+        .process-quote {
+            font-family: var(--ff-display);
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding: 1.5rem 0 1.5rem 1.5rem;
+            border-left: 3px solid var(--gold);
+            margin: 2rem 0;
+        }
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            padding: 1.75rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid transparent;
+            transition: all .3s var(--ease);
+        }
+        .step:hover {
+            background: var(--cream);
+            border-color: var(--border);
+            transform: translateX(4px);
+        }
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--gold-pale);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--ff-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .step-content h3 {
+            font-family: var(--ff-display);
+            font-size: 1.15rem;
+            margin-bottom: .4rem;
+            color: var(--text-dark);
+        }
+        .step-content p {
+            font-size: .9rem;
+            color: var(--text-mid);
+            line-height: 1.65;
+        }
+
+        /* ─── Section 3: El Taller ─── */
+        .taller-section { background: var(--cream); }
+        .taller-intro {
+            max-width: 640px;
+            margin-inline: auto;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .taller-intro .section-lead { margin-inline: auto; }
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+        }
+        .company-card {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,.06);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all .3s var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+        .company-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            opacity: 0;
+            transition: opacity .3s;
+        }
+        .company-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            border-color: transparent;
+        }
+        .company-card:hover::before { opacity: 1; }
+        .company-logo-area {
+            width: 160px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--cream);
+            border-radius: var(--radius);
+            overflow: hidden;
+            padding: .5rem;
+        }
+        .company-logo-area img {
+            max-width: 150px;
+            max-height: 70px;
+            width: 100%;
+            object-fit: contain;
+            filter: grayscale(15%);
+            transition: filter .3s;
+        }
+        .company-card:hover .company-logo-area img { filter: grayscale(0); }
+        .company-logo-placeholder {
+            font-family: var(--ff-display);
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--navy-mid);
+            text-align: center;
+            line-height: 1.3;
+        }
+        .company-card h3 {
+            font-family: var(--ff-display);
+            font-size: 1.15rem;
+            margin-bottom: .5rem;
+            color: var(--text-dark);
+        }
+        .company-card p {
+            font-size: .875rem;
+            color: var(--text-mid);
+            line-height: 1.65;
+        }
+        .company-tag {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: var(--gold-pale);
+            padding: .25rem .65rem;
+            border-radius: 50px;
+        }
+        .taller-footer-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: .9rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        .taller-footer-note strong { color: var(--text-mid); font-style: normal; }
+
+        /* ─── Section 4: La transformación ─── */
+        .transform-section { background: var(--white); }
+        .transform-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .transform-col {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        .transform-header {
+            padding: 1.25rem 2rem;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+        .transform-col--before .transform-header {
+            background: #f1f3f5;
+            color: #6c757d;
+        }
+        .transform-col--after .transform-header {
+            background: var(--navy);
+            color: var(--gold);
+        }
+        .transform-items { border: 1px solid rgba(0,0,0,.07); border-top: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+        .transform-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid rgba(0,0,0,.05);
+            transition: background .2s;
+        }
+        .transform-item:last-child { border-bottom: none; }
+        .transform-item:hover { background: var(--cream); }
+        .transform-icon {
+            flex-shrink: 0;
+            margin-top: .1rem;
+            font-size: 1.1rem;
+        }
+        .transform-item p {
+            font-size: .9rem;
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+        .transform-col--after .transform-item p { color: var(--text-dark); font-weight: 500; }
+
+        /* ─── Section 5: Video ─── */
+        .video-section { background: var(--navy); }
+        .video-section .section-title { color: var(--white); }
+        .video-section .section-lead  { color: rgba(255,255,255,.6); }
+        .video-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 24px 80px rgba(0,0,0,.45);
+            background: #000;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+            border-radius: var(--radius-lg);
+        }
+
+        /* ─── Section 6: Testimonios ─── */
+        .testimonials-section { background: var(--cream); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all .3s var(--ease);
+            position: relative;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: .75rem; left: 1.5rem;
+            font-family: var(--ff-display);
+            font-size: 5rem;
+            color: var(--gold-pale);
+            line-height: 1;
+        }
+        .testimonial-text {
+            font-size: .93rem;
+            color: var(--text-mid);
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            padding-top: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+        }
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gold-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--ff-display);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+        .author-name {
+            font-weight: 600;
+            font-size: .88rem;
+            color: var(--text-dark);
+        }
+        .author-role {
+            font-size: .78rem;
+            color: var(--text-light);
+        }
+        .testimonials-add-yours {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: .88rem;
+            color: var(--text-light);
+        }
+        .testimonials-add-yours a {
+            color: var(--gold);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* ─── Section 6: Agenda ─── */
+        .agenda-section {
+            background: var(--cream);
+        }
+        .agenda-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .agenda-intro .section-lead { margin-bottom: 2rem; }
+        .agenda-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .agenda-benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: .85rem;
+            font-size: .9rem;
+            color: var(--text-mid);
+            line-height: 1.55;
+        }
+        .agenda-benefit-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--gold-pale);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .9rem;
+            margin-top: -.1rem;
+        }
+        .agenda-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(0,0,0,.06);
+            overflow: hidden;
+        }
+        .agenda-card-header {
+            background: var(--navy);
+            padding: 1.75rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .agenda-card-header-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(201,168,76,.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+        .agenda-card-header-text strong {
+            display: block;
+            font-family: var(--ff-display);
+            font-size: 1.1rem;
+            color: var(--white);
+        }
+        .agenda-card-header-text span {
+            font-size: .8rem;
+            color: var(--gold);
+        }
+        .agenda-card-body { padding: 2rem; }
+        .agenda-slots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: .6rem;
+            margin-bottom: 1.75rem;
+        }
+        .agenda-slot {
+            padding: .55rem .4rem;
+            border-radius: var(--radius);
+            border: 1.5px solid rgba(0,0,0,.08);
+            text-align: center;
+            font-size: .78rem;
+            color: var(--text-mid);
+            font-weight: 500;
+            transition: all .2s;
+            cursor: default;
+        }
+        .agenda-slot--active {
+            border-color: var(--gold);
+            background: var(--gold-pale);
+            color: var(--navy);
+            font-weight: 600;
+        }
+        .agenda-slot--free {
+            border-color: rgba(0,0,0,.07);
+            color: var(--text-light);
+        }
+        .agenda-duration {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            font-size: .85rem;
+            color: var(--text-mid);
+            padding: 1rem 1.2rem;
+            background: var(--cream);
+            border-radius: var(--radius);
+            margin-bottom: 1.5rem;
+        }
+        .agenda-duration span { font-weight: 600; color: var(--text-dark); }
+        .btn-agenda {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            width: 100%;
+            padding: 1rem;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: var(--ff-body);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all .25s var(--ease);
+        }
+        .btn-agenda:hover {
+            background: var(--navy-mid);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(13,27,42,.25);
+        }
+        .btn-agenda svg { flex-shrink: 0; }
+        .agenda-note {
+            text-align: center;
+            font-size: .75rem;
+            color: var(--text-light);
+            margin-top: .9rem;
+        }
+        @media (max-width: 900px) {
+            .agenda-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        /* ─── Section 7: CTA Final ─── */
+        .cta-section {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 50% 80% at 20% 50%, rgba(201,168,76,.08) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 60% at 80% 50%, rgba(30,53,84,.6) 0%, transparent 60%);
+        }
+        .cta-section .container { position: relative; z-index: 1; }
+        .cta-section .section-title { color: var(--white); max-width: 680px; margin-inline: auto; margin-bottom: 1rem; }
+        .cta-section .big-question { margin-bottom: .5rem; }
+        .cta-tagline {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,.6);
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+        .cta-tagline strong { color: rgba(255,255,255,.9); }
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .cta-contact-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: .88rem;
+            color: rgba(255,255,255,.45);
+        }
+        .cta-contact-options a {
+            color: rgba(255,255,255,.6);
+            transition: color .25s;
+        }
+        .cta-contact-options a:hover { color: var(--gold); }
+        .cta-divider {
+            color: rgba(255,255,255,.2);
+        }
+
+        /* ─── Footer ─── */
+        footer {
+            background: #060f1a;
+            color: rgba(255,255,255,.45);
+            padding: 2.5rem 0;
+        }
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .footer-brand strong {
+            font-family: var(--ff-display);
+            color: rgba(255,255,255,.7);
+            font-size: 1rem;
+        }
+        .footer-brand span {
+            display: block;
+            font-size: .75rem;
+            margin-top: .15rem;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            font-size: .8rem;
+        }
+        .footer-links a { transition: color .25s; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-legal {
+            font-size: .75rem;
+            width: 100%;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,.06);
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* ─── Floating WhatsApp ─── */
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 1.75rem;
+            right: 1.75rem;
+            z-index: 200;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,.45);
+            transition: transform .25s var(--ease), box-shadow .25s;
+            cursor: pointer;
+        }
+        .fab-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 28px rgba(37,211,102,.5);
+        }
+        .fab-whatsapp svg { width: 28px; height: 28px; fill: white; }
+
+        /* ─── Responsive ─── */
+        /* ─── Tablet ─── */
+        @media (max-width: 900px) {
+            section { padding: 4rem 0; }
+
+            /* Hero: foto arriba, texto abajo */
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding-bottom: 3rem;
+            }
+            .hero-content {
+                padding: 2rem 0 2.5rem;
+                order: 2;
+                text-align: center;
+                align-items: center;
+            }
+            .hero-eyebrow { justify-content: center; }
+            .hero h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); }
+            .hero-sub { text-align: center; max-width: 100%; font-size: 1rem; }
+            .hero-trust { justify-content: center; flex-wrap: wrap; }
+            .hero-trust-logos { justify-content: center; }
+
+            /* Foto compacta en mobile */
+            .hero-visual {
+                order: 1;
+                display: flex;
+                justify-content: center;
+                padding: 6rem 0 1.5rem;
+            }
+            .hero-photo-wrap {
+                width: 220px;
+            }
+            .hero-photo {
+                height: 280px;
+                border-radius: var(--radius-lg);
+                object-position: top center;
+                box-shadow: 0 12px 40px rgba(0,0,0,.45);
+            }
+            .hero-photo-wrap::before { display: none; }
+            .hero-photo-name { display: block; }
+
+            /* Grids a 1 columna */
+            .scenarios-grid      { grid-template-columns: 1fr; }
+            .process-grid        { grid-template-columns: 1fr; gap: 2rem; }
+            .companies-grid      { grid-template-columns: repeat(2, 1fr); }
+            .transform-grid      { grid-template-columns: 1fr; }
+            .testimonials-grid   { grid-template-columns: 1fr; }
+            .agenda-grid         { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        /* ─── Mobile ─── */
+        @media (max-width: 600px) {
+            section { padding: 3.5rem 0; }
+
+            /* Nav */
+            .nav-cta .nav-link { display: none; }
+            .nav-inner { padding: .85rem 0; }
+            .btn { padding: .55rem 1.1rem; font-size: .82rem; }
+
+            /* Hero */
+            .hero-content { padding: 1.5rem 0 2rem; }
+            .hero h1 { font-size: clamp(1.65rem, 7vw, 2.2rem); line-height: 1.22; }
+            .hero-sub { font-size: .92rem; }
+            .hero-actions { flex-direction: column; gap: .75rem; }
+            .btn-lg { width: 100%; justify-content: center; padding: .85rem 1.5rem; font-size: .95rem; }
+            .hero-trust { flex-direction: column; gap: .5rem; align-items: center; }
+
+            /* Foto en mobile pequeño */
+            .hero-photo-wrap { width: 200px; }
+            .hero-photo { height: 260px; }
+
+            /* Secciones */
+            .section-title { font-size: clamp(1.55rem, 6vw, 2rem); }
+            .section-lead  { font-size: .95rem; }
+            .section-eyebrow { font-size: .72rem; }
+
+            /* Escenarios */
+            .scenario-card { padding: 1.5rem; }
+
+            /* Proceso */
+            .step { padding: 1.25rem; }
+            .process-quote { font-size: 1.1rem; padding-left: 1rem; }
+
+            /* Empresas: 1 columna */
+            .companies-grid { grid-template-columns: 1fr; }
+            .company-card { padding: 1.75rem 1.5rem; }
+
+            /* Transformación */
+            .transform-header { padding: 1rem 1.25rem; }
+            .transform-item { padding: 1rem 1.25rem; gap: .75rem; }
+            .transform-item p { font-size: .85rem; }
+
+            /* Testimonios */
+            .testimonial-card { padding: 1.5rem; }
+
+            /* Video */
+            .video-wrapper { border-radius: var(--radius); }
+
+            /* Agenda */
+            .agenda-card-header { padding: 1.25rem 1.5rem; }
+            .agenda-card-body { padding: 1.5rem; }
+            .agenda-benefits { gap: .75rem; }
+            .agenda-benefit { font-size: .85rem; }
+
+            /* CTA */
+            .cta-actions { flex-direction: column; align-items: center; }
+            .cta-contact-options { flex-direction: column; gap: .5rem; align-items: center; }
+            .cta-divider { display: none; }
+            .cta-tagline { font-size: .95rem; }
+
+            /* Footer */
+            .footer-inner { flex-direction: column; gap: .75rem; }
+            .footer-links { gap: .75rem; justify-content: center; flex-wrap: wrap; }
+            .footer-brand { text-align: center; }
+
+            /* FAB WhatsApp más pequeño en mobile */
+            .fab-whatsapp { width: 50px; height: 50px; bottom: 1.25rem; right: 1.25rem; }
+            .fab-whatsapp svg { width: 24px; height: 24px; }
+        }
+
+        /* ─── Mobile muy pequeño ─── */
+        @media (max-width: 380px) {
+            .hero h1 { font-size: 1.5rem; }
+            .container { width: 96%; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav id="main-nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="Inicio">
+                <strong>Oscar Biondo</strong>
+                <span>Asesor · Mat. 93806</span>
+            </a>
+            <div class="nav-cta">
+                <a href="#como-trabajo" class="nav-link">Cómo trabajo</a>
+                <a href="#mi-respaldo" class="nav-link">Mi respaldo</a>
+                <a href="#agendar"
+                   class="btn btn-gold"
+>
+                    Agendar consulta
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ─── Hero ─── -->
+<section class="hero" id="inicio" aria-label="Inicio">
+    <div class="hero-content container" style="grid-column:1">
+        <span class="hero-eyebrow reveal">Asesor de Vida y Retiro</span>
+        <h1 class="reveal reveal-delay-1">
+            No te vendo<br>un seguro.<br>
+            <em>Te ayudo a construir<br>el plan que te deje<br>dormir tranquilo.</em>
+        </h1>
+        <p class="hero-sub reveal reveal-delay-2">
+            Cada familia tiene miedos distintos y sueños únicos.<br>
+            <strong>Mi trabajo es escuchar los tuyos</strong> y armar la protección que tiene sentido para vos.
+        </p>
+        <div class="hero-actions reveal reveal-delay-3">
+            <a href="https://wa.me/5492613829488?text=Hola%20Oscar%2C%20quiero%20hablar%20sobre%20mi%20situaci%C3%B3n"
+               class="btn btn-whatsapp btn-lg"
+               target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Escribime por WhatsApp
+            </a>
+            <a href="#agendar" class="btn btn-outline btn-lg">
+                Agendá una consulta gratuita
+            </a>
+        </div>
+        <div class="hero-trust reveal reveal-delay-4">
+            <p class="hero-trust-text">Respaldo de:</p>
+            <div class="hero-trust-logos">
+                <span class="company-pill">Life Seguros</span>
+                <span class="company-pill">San Cristóbal</span>
+                <span class="company-pill">CNP Seguros</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-visual">
+        <div class="hero-photo-wrap reveal reveal-delay-2">
+            <img src="img/foto-oscar.jpeg"
+                 alt="Oscar Biondo — Asesor de Vida y Retiro"
+                 class="hero-photo">
+            <!-- nombre sobre la foto, visible en desktop y mobile -->
+            <div class="hero-photo-name">
+                <span class="hero-photo-name-title">Oscar Biondo</span>
+                <span class="hero-photo-name-sub">Asesor de Vida y Retiro</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── La pregunta que nadie se anima a hacer ─── -->
+<section class="question-section" aria-labelledby="q-title">
+    <div class="container">
+        <div class="section-eyebrow reveal" style="color:var(--gold)">La pregunta que cambia todo</div>
+        <h2 id="q-title" class="big-question reveal reveal-delay-1">
+            ¿Qué pasaría mañana<br>
+            si vos <em>no estuvieras</em>?
+        </h2>
+        <p class="section-lead reveal reveal-delay-2" style="color:rgba(255,255,255,.6); margin-inline:auto; text-align:center">
+            No es para asustarte. Es la pregunta que más de mis clientes me agradecen haber hecho.
+            Porque pensar en eso —aunque duela— es el primer paso para proteger a quienes querés.
+        </p>
+
+        <div class="scenarios-grid">
+            <div class="scenario-card reveal reveal-delay-1">
+                <div class="scenario-emoji">👨‍👧</div>
+                <div class="scenario-persona">El papá ocupado</div>
+                <h3>"Siempre dije que lo iba a arreglar cuando tuviera tiempo"</h3>
+                <p>Trabajo, hijos, mil cosas. Los seguros siempre quedan para después.
+                   Hasta que una tarde de martes te das cuenta de que el "después" no existe en las pólizas de la tranquilidad.</p>
+                <p class="scenario-outcome">→ Hoy tiene un plan. Duerme distinto.</p>
+            </div>
+            <div class="scenario-card reveal reveal-delay-2">
+                <div class="scenario-emoji">👩‍💼</div>
+                <div class="scenario-persona">La profesional independiente</div>
+                <h3>"Pensaba que el retiro era algo lejano, de gente mayor"</h3>
+                <p>Freelance a los 35, sin aportes, sin fondo de retiro. Construyendo su negocio.
+                   Un día calculó cuánto necesitaría a los 65 y se le heló la sangre.</p>
+                <p class="scenario-outcome">→ Empezó ahora. El tiempo trabaja para ella.</p>
+            </div>
+            <div class="scenario-card reveal reveal-delay-3">
+                <div class="scenario-emoji">👫</div>
+                <div class="scenario-persona">La pareja que planifica</div>
+                <h3>"Compramos el departamento, el auto. Nunca pensamos en lo invisible"</h3>
+                <p>Habían armado todo para vivir bien. Pero nada para proteger lo que construyeron
+                   si alguno de los dos no podía seguir trabajando.</p>
+                <p class="scenario-outcome">→ Hoy tienen un escudo que nadie ve pero todos sienten.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── Cómo construimos juntos ─── -->
+<section class="process-section" id="como-trabajo" aria-labelledby="process-title">
+    <div class="container">
+        <div class="process-grid">
+            <div class="process-intro">
+                <div class="section-eyebrow reveal">Mi forma de trabajar</div>
+                <h2 id="process-title" class="section-title reveal reveal-delay-1">
+                    Así construimos<br>juntos tu plan
+                </h2>
+                <p class="section-lead reveal reveal-delay-2">
+                    No hay presión, no hay formularios interminables. Solo una conversación honesta
+                    sobre lo que importa.
+                </p>
+                <blockquote class="process-quote reveal reveal-delay-3">
+                    "Primero necesito entender quién sos y qué querés proteger. Después viene todo lo demás."
+                </blockquote>
+                <a href="#contacto"
+                   class="btn btn-gold reveal reveal-delay-4"
+                   style="margin-top:1rem">
+                    Empezar esa conversación
+                </a>
+            </div>
+
+            <div class="steps">
+                <div class="step reveal reveal-delay-1">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Primero te escucho</h3>
+                        <p>Una llamada o reunión sin agenda oculta. Me contás tu situación, tu familia, tus miedos,
+                           tus planes. Yo tomo notas y hago preguntas. Nada más.</p>
+                    </div>
+                </div>
+                <div class="step reveal reveal-delay-2">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Diseño el plan correcto</h3>
+                        <p>Analizo qué herramienta —de las tres compañías con las que trabajo— se adapta mejor
+                           a tu situación real. No te recomiendo lo más caro ni lo más barato. Te recomiendo lo que tiene sentido para vos.</p>
+                    </div>
+                </div>
+                <div class="step reveal reveal-delay-3">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>No desaparezco cuando firmás</h3>
+                        <p>Mi trabajo no termina con el contrato. Estoy disponible para dudas, ajustes,
+                           cambios en tu vida que requieran adaptar el plan. Eso es ser asesor, no vendedor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── Las herramientas de mi taller ─── -->
+<section class="taller-section" id="mi-respaldo" aria-labelledby="taller-title">
+    <div class="container">
+        <div class="taller-intro">
+            <div class="section-eyebrow reveal">Las herramientas de mi taller</div>
+            <h2 id="taller-title" class="section-title reveal reveal-delay-1">
+                No trabajo con una empresa.<br>Trabajo con las mejores.
+            </h2>
+            <p class="section-lead reveal reveal-delay-2">
+                Como un buen artesano elige sus herramientas según lo que va a construir,
+                yo elijo la compañía según lo que vos necesitás.
+                Tres respaldos distintos. Una sola lealtad: la tuya.
+            </p>
+        </div>
+
+        <div class="companies-grid">
+            <div class="company-card reveal reveal-delay-1">
+                <div class="company-logo-area">
+                    <img src="img/life-seguros.jpeg" alt="Life Seguros"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="company-logo-placeholder" style="display:none">Life<br>Seguros</div>
+                </div>
+                <h3>Life Seguros</h3>
+                <p>Especialistas en seguros de vida con cobertura integral. Soluciones flexibles para distintos momentos de la vida y niveles de protección.</p>
+                <span class="company-tag">Vida · Cobertura</span>
+            </div>
+            <div class="company-card reveal reveal-delay-2">
+                <div class="company-logo-area">
+                    <img src="img/san-cristobal.png"
+                         alt="San Cristóbal Seguros Retiro"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="company-logo-placeholder" style="display:none">San<br>Cristóbal</div>
+                </div>
+                <h3>San Cristóbal Seguros</h3>
+                <p>Décadas de trayectoria en el mercado argentino. Solidez institucional y presencia federal que genera confianza real.</p>
+                <span class="company-tag">Solidez · Trayectoria</span>
+            </div>
+            <div class="company-card reveal reveal-delay-3">
+                <div class="company-logo-area">
+                    <img src="img/cnp.png"
+                         alt="CNP Seguros"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="company-logo-placeholder" style="display:none">CNP<br>Seguros</div>
+                </div>
+                <h3>CNP Seguros</h3>
+                <p>Respaldo europeo con presencia local. Especialistas en retiro y ahorro a largo plazo para construir tu futuro con certeza.</p>
+                <span class="company-tag">Retiro · Ahorro</span>
+            </div>
+        </div>
+
+        <p class="taller-footer-note reveal">
+            <strong>Importante:</strong> soy asesor independiente. Mi recomendación la define tu situación, no comisiones ni metas comerciales.
+        </p>
+    </div>
+</section>
+
+<!-- ─── La diferencia que hace un plan ─── -->
+<section class="transform-section" aria-labelledby="transform-title">
+    <div class="container">
+        <div class="section-header section-header--center">
+            <div class="section-eyebrow reveal">Antes y después de tener un plan</div>
+            <h2 id="transform-title" class="section-title reveal reveal-delay-1">
+                No es lo que tenés.<br>Es cómo te sentís.
+            </h2>
+            <p class="section-lead reveal reveal-delay-2">
+                Los seguros no son papeles. Son la diferencia entre vivir con ansiedad y vivir con certeza.
+            </p>
+        </div>
+
+        <div class="transform-grid">
+            <div class="transform-col transform-col--before reveal reveal-delay-1">
+                <div class="transform-header">Sin un plan</div>
+                <div class="transform-items">
+                    <div class="transform-item">
+                        <span class="transform-icon">😰</span>
+                        <p>Te despertás a las 3 am pensando "¿qué pasaría si...?"</p>
+                    </div>
+                    <div class="transform-item">
+                        <span class="transform-icon">🔄</span>
+                        <p>Posponés la decisión porque no sabés por dónde empezar</p>
+                    </div>
+                    <div class="transform-item">
+                        <span class="transform-icon">📊</span>
+                        <p>Googleás seguros y te perdés entre opciones confusas</p>
+                    </div>
+                    <div class="transform-item">
+                        <span class="transform-icon">💭</span>
+                        <p>Sentís que tu familia queda expuesta si algo te pasa</p>
+                    </div>
+                    <div class="transform-item">
+                        <span class="transform-icon">🤷</span>
+                        <p>No sabés si los aportes que hacés alcanzan para el retiro</p>
+                    </div>
+                </div>
+            </div>
+            <div class="transform-col transform-col--after reveal reveal-delay-2">
+                <div class="transform-header">Con tu plan armado</div>
+                <div class="transform-items">
+                    <div class="transform-item">
+                        <span class="transform-icon">😌</span>
+                        <p>Sabés exactamente qué pasa si algo te pasa. Dormís diferente.</p>
+                    </div>
+                    <div class="transform-item">
+                        <span class="transform-icon">✅</span>
+                        <p>Tomaste una decisión concreta. Ya no está pendiente en tu cabeza.</p>
+                    </div>
+                    <div class="transform-item">
+                        <span class="transform-icon">🎯</span>
+                        <p>Tenés la cobertura justa: ni de más, ni de menos. La que te corresponde.</p>
+                    </div>
+                    <div class="transform-item">
+                        <span class="transform-icon">🛡️</span>
+                        <p>Tu familia está protegida sin que vos tengas que estar para que funcione.</p>
+                    </div>
+                    <div class="transform-item">
+                        <span class="transform-icon">🚀</span>
+                        <p>Tu retiro tiene una estrategia. El tiempo trabaja a tu favor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── Lo que dicen los que confiaron ─── -->
+<!-- ─── Video: Comparación ─── -->
+<section class="video-section" aria-labelledby="video-title">
+    <div class="container">
+        <div class="section-header section-header--center">
+            <div class="section-eyebrow reveal" style="color:var(--gold)">Miralo en acción</div>
+            <h2 id="video-title" class="section-title reveal reveal-delay-1">
+                La diferencia entre opciones,<br>explicada sin vueltas
+            </h2>
+            <p class="section-lead reveal reveal-delay-2" style="color:rgba(255,255,255,.6); margin-inline:auto">
+                Un resumen visual de por qué no todas las coberturas son iguales
+                y cómo elegir la que realmente te conviene.
+            </p>
+        </div>
+        <div class="video-wrapper reveal reveal-delay-3">
+            <video
+                controls
+                muted
+                preload="metadata"
+                playsinline
+                style="max-height:540px; object-fit:contain;">
+                <source src="video/comparacion-web.mp4" type="video/mp4">
+                Tu navegador no soporta video HTML5.
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- ─── Testimonios ─── -->
+<section class="testimonials-section" aria-labelledby="test-title">
+    <div class="container">
+        <div class="section-header section-header--center">
+            <div class="section-eyebrow reveal">Lo que dicen los que confiaron</div>
+            <h2 id="test-title" class="section-title reveal reveal-delay-1">
+                Las historias que más me importan
+            </h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal reveal-delay-1">
+                <p class="testimonial-text">
+                    "Oscar no me vendió nada. Me hizo preguntas que nunca nadie me había hecho y al final entendí
+                    que necesitaba una protección muy diferente a lo que yo creía. Hoy duermo sin esa angustia."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">M</div>
+                    <div>
+                        <div class="author-name">Mariana G.</div>
+                        <div class="author-role">Profesional independiente, 38 años</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal reveal-delay-2">
+                <p class="testimonial-text">
+                    "Pensábamos que era un trámite. Terminó siendo una de las conversaciones más importantes
+                    que tuvimos como familia. Nos ayudó a hablar de cosas que evitábamos desde hace años."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">R</div>
+                    <div>
+                        <div class="author-name">Roberto y Claudia S.</div>
+                        <div class="author-role">Empresarios, 45 y 43 años</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal reveal-delay-3">
+                <p class="testimonial-text">
+                    "Me explicó todo sin apurarme. Comparó opciones de las tres empresas y me dijo cuál era
+                    la mejor para mi caso puntual, no para su comisión. Esa honestidad no se encuentra fácil."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">L</div>
+                    <div>
+                        <div class="author-name">Lucas T.</div>
+                        <div class="author-role">Docente universitario, 52 años</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="testimonials-add-yours reveal">
+            ¿Sos cliente y querés compartir tu experiencia?
+            <a href="mailto:oscarbiondoseguros@gmail.com?subject=Quiero%20dejar%20mi%20testimonio">Escribime acá</a>
+        </p>
+    </div>
+</section>
+
+<!-- ─── Agenda tu consulta ─── -->
+<section class="agenda-section" id="agendar" aria-labelledby="agenda-title">
+    <div class="container">
+        <div class="agenda-grid">
+            <div class="agenda-intro">
+                <div class="section-eyebrow reveal">Sin costo, sin compromiso</div>
+                <h2 id="agenda-title" class="section-title reveal reveal-delay-1">
+                    Agendá tu<br>consulta gratuita
+                </h2>
+                <p class="section-lead reveal reveal-delay-2">
+                    Elegí el día y horario que mejor te quede.
+                    Una charla de 30 minutos puede ser el primer paso
+                    para dejar de postergar lo importante.
+                </p>
+                <div class="agenda-benefits reveal reveal-delay-3">
+                    <div class="agenda-benefit">
+                        <div class="agenda-benefit-icon">⏱️</div>
+                        <span><strong>30 minutos</strong> — sin presión, sin formularios. Solo una conversación honesta sobre tu situación.</span>
+                    </div>
+                    <div class="agenda-benefit">
+                        <div class="agenda-benefit-icon">📱</div>
+                        <span><strong>Por videollamada o teléfono</strong> — desde donde estés, cuando puedas.</span>
+                    </div>
+                    <div class="agenda-benefit">
+                        <div class="agenda-benefit-icon">🎯</div>
+                        <span><strong>Sin costo</strong> — la primera consulta es gratis. Siempre.</span>
+                    </div>
+                    <div class="agenda-benefit">
+                        <div class="agenda-benefit-icon">✅</div>
+                        <span><strong>Confirmación automática</strong> — recibís un recordatorio en tu mail.</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/5492613829488?text=Hola%20Oscar%2C%20quiero%20agendar%20una%20consulta"
+                   class="btn btn-whatsapp reveal reveal-delay-4"
+                   target="_blank" rel="noopener"
+                   style="margin-top:.5rem">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    O escribime por WhatsApp
+                </a>
+            </div>
+
+            <div class="agenda-card reveal reveal-delay-2">
+                <div class="agenda-card-header">
+                    <div class="agenda-card-header-icon">📅</div>
+                    <div class="agenda-card-header-text">
+                        <strong>Consulta con Oscar Biondo</strong>
+                        <span>Asesor de Vida y Retiro · Mat. 93806</span>
+                    </div>
+                </div>
+                <div class="agenda-card-body">
+                    <div class="agenda-duration">
+                        🕐 &nbsp;<span>30 minutos</span> &nbsp;·&nbsp; Videollamada o teléfono &nbsp;·&nbsp; Sin costo
+                    </div>
+
+                    <a href="https://calendar.app.google/Q4jS91DgK1ZTXyEVA"
+                       target="_blank"
+                       rel="noopener"
+                       class="btn-agenda">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Ver todos los horarios y reservar
+                    </a>
+                    <p class="agenda-note">Se abre Google Calendar · Confirmación automática por mail</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── CTA Final ─── -->
+<section class="cta-section" id="contacto" aria-labelledby="cta-title">
+    <div class="container" style="text-align:center; padding: 2rem 0;">
+        <div class="section-eyebrow reveal" style="color:var(--gold)">Tu momento es hoy</div>
+        <h2 id="cta-title" class="section-title reveal reveal-delay-1">
+            Cada día sin un plan<br>es un día que regalás<br>a la incertidumbre.
+        </h2>
+        <p class="cta-tagline reveal reveal-delay-2">
+            No para cuando estés listo. No para el mes que viene.
+            <strong>Hoy, con la situación que tenés ahora.</strong><br>
+            Una sola conversación puede cambiar lo que dormís esta noche.
+        </p>
+
+        <div class="cta-actions reveal reveal-delay-3">
+            <a href="https://wa.me/5492613829488?text=Hola%20Oscar%2C%20quiero%20hablar%20sobre%20mi%20plan%20de%20vida%20y%20retiro"
+               class="btn btn-whatsapp btn-lg"
+               target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Hablemos por WhatsApp
+            </a>
+            <a href="mailto:oscarbiondoseguros@gmail.com?subject=Quiero%20hablar%20sobre%20mi%20plan"
+               class="btn btn-outline btn-lg">
+                📧 Escribime un email
+            </a>
+        </div>
+
+        <div class="cta-contact-options reveal reveal-delay-4">
+            <a href="mailto:oscarbiondoseguros@gmail.com">oscarbiondoseguros@gmail.com</a>
+            <span class="cta-divider">·</span>
+            <span>Mat. SSN 93806</span>
+            <span class="cta-divider">·</span>
+            <a href="https://maps.google.com/?q=Ramponi+6193+Villanueva+Guaymallen+Mendoza" target="_blank" rel="noopener">Ramponi 6193, Villanueva, Guaymallén · Mendoza</a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>Oscar Biondo</strong>
+                <span>Asesor de Vida y Retiro · Matrícula SSN 93806</span>
+            </div>
+            <div class="footer-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#como-trabajo">Cómo trabajo</a>
+                <a href="#mi-respaldo">Mi respaldo</a>
+                <a href="#agendar">Agendar</a>
+                <a href="tel:+542613829488">261 382-9488</a>
+            </div>
+        </div>
+        <p class="footer-legal">
+            Asesor habilitado por la Superintendencia de Seguros de la Nación (SSN) · Mat. 93806 ·
+            Trabajo con Life Seguros, San Cristóbal Seguros y CNP Seguros.<br>
+            Ramponi 6193, Villanueva, Guaymallén, Mendoza · Tel. 261 382-9488 · oscarbiondoseguros@gmail.com<br>
+            Los testimonios son de clientes reales. Los nombres pueden estar modificados para proteger su privacidad.
+        </p>
+    </div>
+</footer>
+
+<!-- ─── FAB WhatsApp ─── -->
+<a href="https://wa.me/5492613829488?text=Hola%20Oscar%2C%20quiero%20consultar%20sobre%20seguros%20de%20vida%20y%20retiro"
+   class="fab-whatsapp"
+   target="_blank"
+   rel="noopener"
+   aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ─── JavaScript ─── -->
+<script>
+    // Nav transparencia
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Animaciones scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Smooth scroll para links internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', e => {
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Autoplay video al entrar en pantalla, pausa al salir
+    const video = document.querySelector('.video-wrapper video');
+    if (video) {
+        video.muted = true; // necesario para autoplay sin interacción
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {}); // catch por si el navegador bloquea
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.4 }); // arranca cuando el 40% del video es visible
+        videoObserver.observe(video);
+    }
+</script>
+</body>
+</html>
